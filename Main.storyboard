@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18104"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!-- Map View Controller -->
+        <scene sceneID="mapViewControllerScene">
+            <objects>
+                <viewController id="mapViewController" customClass="MapViewController" customModule="MapExplorerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mapView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <subviews>
+                            <mapView translatesAutoresizingMaskIntoConstraints="NO" id="mapViewElement">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mapViewElement" firstAttribute="top" secondItem="view" secondAttribute="top" id="mapViewTopConstraint"/>
+                            <constraint firstItem="mapViewElement" firstAttribute="leading" secondItem="view" secondAttribute="leading" id="mapViewLeadingConstraint"/>
+                            <constraint firstItem="mapViewElement" firstAttribute="trailing" secondItem="view" secondAttribute="trailing" id="mapViewTrailingConstraint"/>
+                            <constraint firstItem="mapViewElement" firstAttribute="bottom" secondItem="view" secondAttribute="bottom" id="mapViewBottomConstraint"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map View"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="firstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+        
+        <!-- Search View Controller -->
+        <scene sceneID="searchViewControllerScene">
+            <objects>
+                <viewController id="searchViewController" customClass="SearchViewController" customModule="MapExplorerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="searchView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <subviews>
+                            <searchBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="searchBarElement">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            </searchBar>
+                            <mapView translatesAutoresizingMaskIntoConstraints="NO" id="mapViewSearchElement">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="searchBarElement" firstAttribute="top" secondItem="view" secondAttribute="top" id="searchBarTopConstraint"/>
+                            <constraint firstItem="searchBarElement" firstAttribute="leading" secondItem="view" secondAttribute="leading" id="searchBarLeadingConstraint"/>
+                            <constraint firstItem="searchBarElement" firstAttribute="trailing" secondItem="view" secondAttribute="trailing" id="searchBarTrailingConstraint"/>
+                            <constraint firstItem="mapViewSearchElement" firstAttribute="top" secondItem="searchBarElement" secondAttribute="bottom" id="mapViewSearchTopConstraint"/>
+                            <constraint firstItem="mapViewSearchElement" firstAttribute="leading" secondItem="view" secondAttribute="leading" id="mapViewSearchLeadingConstraint"/>
+                            <constraint firstItem="mapViewSearchElement" firstAttribute="trailing" secondItem="view" secondAttribute="trailing" id="mapViewSearchTrailingConstraint"/>
+                            <constraint firstItem="mapViewSearchElement" firstAttribute="bottom" secondItem="view" secondAttribute="bottom" id="mapViewSearchBottomConstraint"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search View"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="firstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="375"/>
+        </scene>
+
+        <!-- Route View Controller -->
+        <scene sceneID="routeViewControllerScene">
+            <objects>
+                <viewController id="routeViewController" customClass="RouteViewController" customModule="MapExplorerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="routeView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <subviews>
+                            <mapView translatesAutoresizingMaskIntoConstraints="NO" id="mapViewRouteElement">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mapViewRouteElement" firstAttribute="top" secondItem="view" secondAttribute="top" id="mapViewRouteTopConstraint"/>
+                            <constraint firstItem="mapViewRouteElement" firstAttribute="leading" secondItem="view" secondAttribute="leading" id="mapViewRouteLeadingConstraint"/>
+                            <constraint firstItem="mapViewRouteElement" firstAttribute="trailing" secondItem="view" secondAttribute="trailing" id="mapViewRouteTrailingConstraint"/>
+                            <constraint firstItem="mapViewRouteElement" firstAttribute="bottom" secondItem="view" secondAttribute="bottom" id="mapViewRouteBottomConstraint"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Route View"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="firstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="693" y="375"/>
+        </scene>
+
+        <!-- Tab Bar Controller -->
+        <scene sceneID="tabBarControllerScene">
+            <objects>
+                <tabBarController id="tabBarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="tabBarElement"/>
+                    <connections>
+                        <segue destination="mapViewController" kind="relationship" relationship="viewControllers" id="mapViewControllerSegue"/>
+                        <segue destination="searchViewController" kind="relationship" relationship="viewControllers" id="searchViewControllerSegue"/>
+                        <segue destination="routeViewController" kind="relationship" relationship="viewControllers" id="routeViewControllerSegue"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="firstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="800"/>
+        </scene>
+    </scenes>
+</document>
