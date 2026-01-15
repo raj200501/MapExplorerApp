@@ -1,0 +1,3 @@
+.build/
+.DS_Store
+.swiftpm/xcode/package.xcworkspace/xcshareddata/swiftpm/Package.resolved
