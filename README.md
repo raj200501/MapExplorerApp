@@ -11,7 +11,7 @@ A Swift-based Map Explorer CLI that lets you search a curated map dataset, inspe
 
 ## Requirements
 
-- Swift 6.0+ (verified with Swift 6.2.3 locally and Swift 6.0 in CI)
+- Swift 5.9+ (verified with Swift 6.2.3 locally and Swift 5.9.2 in CI)
 - Bash (for the helper scripts)
 
 ## Dataset
